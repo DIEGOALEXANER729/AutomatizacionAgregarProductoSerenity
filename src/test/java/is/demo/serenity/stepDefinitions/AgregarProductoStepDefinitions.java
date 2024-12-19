@@ -6,6 +6,7 @@ import io.cucumber.java.ast.Cuando;
 import static org.junit.Assert.assertTrue;
 import io.cucumber.java.es.Dado;
 import io.cucumber.java.es.Entonces;
+import is.demo.serenity.utils.EsperaImplicita;
 import net.serenitybdd.screenplay.actions.Open;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
@@ -22,9 +23,13 @@ public class AgregarProductoStepDefinitions {
     @Dado("que el usuario abra el navegador en la url e inicie sesion exitosamente")
     public void queElUsuarioAbraElNavegadorEnLaUrlEInicieSesionExitosamente() {
         theActorCalled("Usuario").wasAbleTo(
-                Open.url("https://demo.serenity.is")
+                Open.url("https://demo.serenity.is/")
+
         );
+
     }
+
+
     @Cuando("el usuario accede al módulo {string}")
     public void elUsuarioAccedeAlMódulo(String string) {
         // Write code here that turns the phrase above into concrete actions
