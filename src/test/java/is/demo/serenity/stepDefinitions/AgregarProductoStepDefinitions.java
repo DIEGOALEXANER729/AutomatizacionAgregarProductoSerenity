@@ -6,9 +6,11 @@ import io.cucumber.java.ast.Cuando;
 import static org.junit.Assert.assertTrue;
 import io.cucumber.java.es.Dado;
 import io.cucumber.java.es.Entonces;
+import is.demo.serenity.interactions.ClicAgregarProducto;
 import is.demo.serenity.interactions.ClicNorthwind;
 import is.demo.serenity.interactions.ClicProductos;
 import is.demo.serenity.task.PaginaInicioTask;
+import is.demo.serenity.task.PaginaNuevoProductoTask;
 import is.demo.serenity.utils.EsperaImplicita;
 import net.serenitybdd.screenplay.actions.Open;
 import net.serenitybdd.screenplay.actors.OnStage;
@@ -47,13 +49,11 @@ public class AgregarProductoStepDefinitions {
     }
     @Cuando("hace clic en Nuevo Producto")
     public void haceClicEnNuevoProducto() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        theActorCalled("usuario").attemptsTo(ClicAgregarProducto.ClicAgregarProducto());
     }
     @Cuando("ingresa la informacion del producto")
     public void ingresaLaInformacionDelProducto() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        theActorCalled("usuario").attemptsTo(PaginaNuevoProductoTask.PaginaNuevoProductoTask());
     }
     @Cuando("hace clic en Guardar")
     public void haceClicEnGuardar() {
