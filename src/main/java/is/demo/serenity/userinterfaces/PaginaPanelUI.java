@@ -7,6 +7,6 @@ import org.openqa.selenium.By;
 public class PaginaPanelUI extends PageObject {
 
     public static final Target BTN_NORTHWIND = Target.the("Boton NorthWind").located(By.xpath("//span[@class='s-sidebar-link-text' and text()='Northwind']"));
-    public static final Target BTN_PRODUCTOS = Target.the("Boton Products").located(By.xpath("//span[@class='s-sidebar-link-text' and text()='Products']"));
+    public static final Target BTN_PRODUCTOS = Target.the("Boton Products").located(By.xpath("//li/a/i[@class='s-sidebar-icon fa fa-cube']"));
 
 }
