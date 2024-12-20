@@ -3,18 +3,25 @@ package is.demo.serenity.stepDefinitions;
 
 import io.cucumber.java.Before;
 import io.cucumber.java.ast.Cuando;
+
+import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static org.junit.Assert.assertTrue;
 import io.cucumber.java.es.Dado;
 import io.cucumber.java.es.Entonces;
 import is.demo.serenity.interactions.ClicAgregarProducto;
+import is.demo.serenity.interactions.ClicGuardarProducto;
 import is.demo.serenity.interactions.ClicNorthwind;
 import is.demo.serenity.interactions.ClicProductos;
+import is.demo.serenity.questions.ValidarProductoQuestions;
 import is.demo.serenity.task.PaginaInicioTask;
 import is.demo.serenity.task.PaginaNuevoProductoTask;
+import is.demo.serenity.task.PaginaProductoTask;
 import is.demo.serenity.utils.EsperaImplicita;
 import net.serenitybdd.screenplay.actions.Open;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
+import org.hamcrest.Matchers;
+
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 
 
@@ -57,18 +64,24 @@ public class AgregarProductoStepDefinitions {
     }
     @Cuando("hace clic en Guardar")
     public void haceClicEnGuardar() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        theActorCalled("usuario").attemptsTo(ClicGuardarProducto.ClicGuardarProducto());
     }
     @Cuando("ingresa producto en el campo de búsqueda")
     public void ingresaProductoEnElCampoDeBúsqueda() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        theActorCalled("usuario").attemptsTo(PaginaProductoTask.PaginaProductoTask());
+        EsperaImplicita.esperaImplicita(5);
     }
     @Entonces("debera visualizar el producto creado en la lista")
     public void deberaVisualizarElProductoCreadoEnLaLista() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        theActorCalled("usuario").should(
+                seeThat(
+                        "Se visualiza producto",
+                        ValidarProductoQuestions.ValidarProductoQuestions(),
+                        Matchers.equalTo(true)
+                )
+
+        );
+        EsperaImplicita.esperaImplicita(5);
     }
 
 

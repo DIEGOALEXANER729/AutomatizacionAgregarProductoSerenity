@@ -8,5 +8,5 @@ public class PaginaProductosUI extends PageObject {
 
     public static final Target BTN_NUEVO_PRODUCTO = Target.the("Boton Nuevo Producto").located(By.xpath("//div[@class='tool-button add-button icon-tool-button']//i[@class='fa fa-plus-circle text-green']"));
     public static final Target TXT_BUSCAR_PRODUCTO = Target.the("Texto de buscar producto").located(By.id("ProductGrid0_QuickSearchInput"));
-
+    public static final Target LBL_VALIDAR_PRODUCTO = Target.the("Boton de mas infomracion").located(By.xpath("//div[@class=\"slick-cell l1 r1\"]/a[contains(text(),'ProductDiegoIpiales')]"));
 }

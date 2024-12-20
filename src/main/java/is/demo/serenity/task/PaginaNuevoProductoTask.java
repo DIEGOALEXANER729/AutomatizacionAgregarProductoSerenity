@@ -10,7 +10,6 @@ import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.actions.Hit;
 import net.serenitybdd.screenplay.actions.SendKeys;
 import org.openqa.selenium.Keys;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Map;
@@ -46,11 +45,10 @@ public class PaginaNuevoProductoTask implements Task {
                     SendKeys.of(Keys.ARROW_DOWN).into(TXT_CATEGORIA),
                 Hit.the(Keys.ENTER).into(TXT_CATEGORIA)
                           );
-            EsperaImplicita.esperaImplicita(3);
             actor.attemptsTo(Enter.theValue(datosExcel.get(0).get("UnidadStock")).into(TXT_UNIDADES_STOCK));
             actor.attemptsTo(Enter.theValue(datosExcel.get(0).get("UnidadPedido")).into(TXT_UNIDADES_BAJO_PEDIDO));
             actor.attemptsTo(Enter.theValue(datosExcel.get(0).get("NivelReorden")).into(TXT_NIVEL_REORDENAMIENTO));
-            actor.attemptsTo(Click.on(BTN_GUARDAR));
+            EsperaImplicita.esperaImplicita(3);
 
     }
 
