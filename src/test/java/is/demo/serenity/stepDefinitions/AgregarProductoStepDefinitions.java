@@ -3,9 +3,7 @@ package is.demo.serenity.stepDefinitions;
 
 import io.cucumber.java.Before;
 import io.cucumber.java.ast.Cuando;
-
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
-import static org.junit.Assert.assertTrue;
 import io.cucumber.java.es.Dado;
 import io.cucumber.java.es.Entonces;
 import is.demo.serenity.interactions.ClicAgregarProducto;
@@ -21,7 +19,6 @@ import net.serenitybdd.screenplay.actions.Open;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
 import org.hamcrest.Matchers;
-
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 
 
