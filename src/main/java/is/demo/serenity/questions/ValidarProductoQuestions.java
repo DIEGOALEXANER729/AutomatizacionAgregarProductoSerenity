@@ -32,7 +32,6 @@ public class ValidarProductoQuestions implements Question<Boolean> {
         }
         return false;
     }
-
     public static Question ValidarProductoQuestions() {
         return new ValidarProductoQuestions();
     }
