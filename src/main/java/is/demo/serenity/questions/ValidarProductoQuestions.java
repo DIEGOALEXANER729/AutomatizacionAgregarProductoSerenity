@@ -3,15 +3,16 @@ package is.demo.serenity.questions;
 import is.demo.serenity.utils.Excel;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
+
 import static is.demo.serenity.userinterfaces.PaginaProductosUI.*;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Map;
 
 public class ValidarProductoQuestions implements Question<Boolean> {
 
-
-    String nomberProducto="";
+    String nomberProducto = "";
 
     @Override
     public Boolean answeredBy(Actor actor) {
@@ -24,19 +25,15 @@ public class ValidarProductoQuestions implements Question<Boolean> {
         } catch (IOException ex) {
             throw new RuntimeException(ex);
         }
-
-
         String productoValidar = LBL_VALIDAR_PRODUCTO.resolveFor(actor).getText();
 
-        if( nomberProducto.equals(productoValidar)){
+        if (nomberProducto.equals(productoValidar)) {
             return true;
         }
-
-
         return false;
     }
 
-    public static Question ValidarProductoQuestions(){
+    public static Question ValidarProductoQuestions() {
         return new ValidarProductoQuestions();
     }
 }

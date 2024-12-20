@@ -13,9 +13,11 @@ public class ClicAgregarProducto implements Interaction {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-             actor.attemptsTo(Click.on(PaginaProductosUI.BTN_NUEVO_PRODUCTO));    }
+        actor.attemptsTo(Click.on(PaginaProductosUI.BTN_NUEVO_PRODUCTO));
+    }
 
-    public static Performable ClicAgregarProducto(){
-        return  instrumented(ClicAgregarProducto.class);}
+    public static Performable ClicAgregarProducto() {
+        return instrumented(ClicAgregarProducto.class);
+    }
 
 }

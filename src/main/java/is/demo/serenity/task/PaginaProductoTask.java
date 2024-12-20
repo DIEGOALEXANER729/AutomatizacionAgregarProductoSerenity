@@ -8,9 +8,11 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.actions.Hit;
 import org.openqa.selenium.Keys;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Map;
+
 import static is.demo.serenity.userinterfaces.PaginaProductosUI.*;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 

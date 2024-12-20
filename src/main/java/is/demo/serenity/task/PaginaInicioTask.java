@@ -1,6 +1,6 @@
 package is.demo.serenity.task;
 
-import is.demo.serenity.utils.EsperaImplicita;
+
 import is.demo.serenity.utils.Excel;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
@@ -11,12 +11,13 @@ import org.openqa.selenium.Keys;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Map;
+
 import static is.demo.serenity.userinterfaces.PaginaInicioUI.*;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 public class PaginaInicioTask implements Task {
 
-    private static ArrayList<Map<String, String>> datosExcel= new ArrayList<>();
+    private static ArrayList<Map<String, String>> datosExcel = new ArrayList<>();
 
     @Override
     public <T extends Actor> void performAs(T actor) {
@@ -25,7 +26,6 @@ public class PaginaInicioTask implements Task {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
         actor.attemptsTo(Enter.theValue(Keys.BACK_SPACE).into(TXT_USUARIO));
         actor.attemptsTo(Enter.theValue(datosExcel.get(0).get("UsuarioInicio")).into(TXT_USUARIO));
         actor.attemptsTo(Enter.theValue(Keys.BACK_SPACE).into(TXT_CLAVE));
@@ -34,7 +34,7 @@ public class PaginaInicioTask implements Task {
 
     }
 
-    public static Performable PaginaInicioTask(){
+    public static Performable PaginaInicioTask() {
         return instrumented(PaginaInicioTask.class);
     }
 }

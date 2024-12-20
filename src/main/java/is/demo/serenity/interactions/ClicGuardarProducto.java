@@ -14,9 +14,11 @@ public class ClicGuardarProducto implements Interaction {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-        actor.attemptsTo(Click.on(PaginaNuevoProductoUI.BTN_GUARDAR));    }
+        actor.attemptsTo(Click.on(PaginaNuevoProductoUI.BTN_GUARDAR));
+    }
 
-    public static Performable ClicGuardarProducto(){
-        return  instrumented(ClicGuardarProducto.class);}
+    public static Performable ClicGuardarProducto() {
+        return instrumented(ClicGuardarProducto.class);
+    }
 
 }

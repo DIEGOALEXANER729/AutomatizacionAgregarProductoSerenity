@@ -8,14 +8,15 @@ import net.serenitybdd.screenplay.actions.Click;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
-public class ClicNorthwind   implements Interaction {
+public class ClicNorthwind implements Interaction {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(Click.on(PaginaPanelUI.BTN_NORTHWIND));
     }
 
-    public static Performable ClicNorthwind(){
-        return  instrumented(ClicNorthwind.class);}
+    public static Performable ClicNorthwind() {
+        return instrumented(ClicNorthwind.class);
+    }
 
 }

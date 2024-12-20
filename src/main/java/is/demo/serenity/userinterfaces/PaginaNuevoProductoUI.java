@@ -17,5 +17,4 @@ public class PaginaNuevoProductoUI extends PageObject {
     public static final Target BTN_GUARDAR = Target.the("boton guardar").located(By.xpath("//i[@class='fa fa-check-circle text-purple']"));
 
 
-
 }
